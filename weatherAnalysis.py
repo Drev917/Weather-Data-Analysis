@@ -29,17 +29,17 @@ else:
 
 import pandas as pd
 
-df = pd.DataFrame(weatherData, columns = ['Temperature','Rain','Sales'])
+df = pd.DataFrame(weatherData, columns = ['Temperature','Precipitation','Sales'])
 
-rain_temp = df[df['Rain']==1]['Temperature'].mean() #mean temperatures on rainy days
-rain_sales = df[df['Rain']==1]['Sales'].mean() #mean sales on rainy days
-nonrain_temp = df[df['Rain']==0]['Temperature'].mean() #mean temperatures on non-rainy days
-nonrain_sales = df[df['Rain']==0]['Sales'].mean() #mean sales on non-rainy days
+prec_temp = df[df['Precipitation']==1]['Temperature'].mean() #mean temperatures on days with precipitation
+prec_sales = df[df['Precipitation']==1]['Sales'].mean() #mean sales on days with precipitation
+dry_temp = df[df['Precipitation']==0]['Temperature'].mean() #mean temperatures on days with no precipitation
+dry_sales = df[df['Precipitation']==0]['Sales'].mean() #mean sales on days with no precipitation
 
-print('Average temperature for rainy days:\n' + str('{:.2f}'.format(rain_temp)))
-print('Average sales for rainy days: \n' + str('${:,.2f}'.format(rain_sales)))
-print('Average temperature for non-rainy days:\n' + str('{:.2f}'.format(nonrain_temp)))
-print('Average sales for non-rainy days: \n' + str('${:,.2f}\n'.format(nonrain_sales)))
+print('Average temperature for days with precipitation:\n' + str('{:.2f}'.format(prec_temp)))
+print('Average sales for days with precipitation: \n' + str('${:,.2f}'.format(prec_sales)))
+print('Average temperature for days with no precipitation:\n' + str('{:.2f}'.format(dry_temp)))
+print('Average sales for days with no precipitation: \n' + str('${:,.2f}\n'.format(dry_sales)))
 
 import seaborn as sns
 
@@ -52,7 +52,7 @@ import matplotlib.pyplot as plt
 
 #linear relationship between temperature and sales
 #non-rainy days plotted in yellow and rainy days plotted in black
-plt.scatter(df['Temperature'],df['Sales'],c = df['Rain']) 
+plt.scatter(df['Temperature'],df['Sales'],c = df['Precipitation']) 
 plt.ylabel('Sales')
 plt.xlabel('Temperature')
 plt.title('Relationship between temperature and sales')
@@ -78,9 +78,3 @@ plt.plot(x, y, 'o', label='original data')
 plt.plot(x, intercept + slope * x, 'r', label='fitted line')
 plt.legend()
 plt.show()
-
-
-
-
-
-
