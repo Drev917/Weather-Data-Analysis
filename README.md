@@ -26,4 +26,3 @@ I also wanted to look at the relationship from a linear regression model. First 
 - Standard distributions of sales and temperatures can be seen creating appealing data visualizations
 - A clearly visible linear relationship between sales and temperatures can also be observed
 - The cluster of sales vs non-rainy days is positionally higher than the cluster of sales vs rainy days which is logical
-- 
