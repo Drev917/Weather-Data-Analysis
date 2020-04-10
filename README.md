@@ -12,7 +12,7 @@ I used Seaborn to visualize the data commonality for easy dissemination.
 
 I wanted to look more closely at the linear relationship between temperature and sales in the data set. I started by sorting values by `Sales` looking at the `Temperature` column. 
 
-By importing Matplotlib, I was able to show the overall ascending relations ship between `Temperature` values and `Sales` values. To enhance the graph, I plotted the no-precipitation values yellow, and the precipitation weather values black.
+By importing Matplotlib, I was able to show the overall ascending relationship between `Temperature` values and `Sales` values. To enhance the graph, I plotted the no-precipitation values yellow, and the precipitation weather values black.
 
 ![ScreenShot](https://github.com/Drev917/Weather_Data/blob/master/TempvSales.JPG)
 
